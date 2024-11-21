@@ -1,6 +1,7 @@
 -- Write your SQL code here
 
-Daily Maintenance Trigger
+------------- Daily Maintenance Trigger -------------
+
 CREATE EVENT daily_schedule_maintenance
 ON SCHEDULE EVERY 1 DAY
 DO
@@ -10,7 +11,9 @@ BEGIN
     FROM Equipment
     WHERE status = 'Operational' AND TIMESTAMPDIFF(DAY, purchaseDate, CURRENT_DATE) % 30 = 0;
 END;
-Monthly cost Trigger
+
+
+------------- Monthly cost Trigger -------------
 CREATE EVENT monthly_cost_report
 ON SCHEDULE EVERY 1 MONTH
 DO

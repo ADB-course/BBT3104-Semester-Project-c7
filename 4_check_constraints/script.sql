@@ -1,5 +1,5 @@
 -- Write your SQL code here
-Equipment Table
+------------- Equipment Table ----------------
 CREATE TABLE Equipment (
     equipmentID VARCHAR(25) PRIMARY KEY,
     manufacturer VARCHAR(50),
@@ -8,7 +8,7 @@ CREATE TABLE Equipment (
 ) ENGINE=InnoDB; 
 CREATE INDEX idx_status ON Equipment(status);
 
-Maintenance table
+---------------- Maintenance table ----------------
 CREATE TABLE Maintenance (
     sessionID VARCHAR(25) PRIMARY KEY, 
     equipmentID VARCHAR(25),
@@ -17,7 +17,7 @@ CREATE TABLE Maintenance (
 ) ENGINE=InnoDB;
 CREATE INDEX idx_equipment ON Maintenance(equipmentID);
 
-Spare Parts Table
+---------------- Spare Parts Table ----------------
 CREATE TABLE SpareParts (
     partID VARCHAR(25) PRIMARY KEY, 
     partName VARCHAR(50),
@@ -29,7 +29,7 @@ CREATE TABLE SpareParts (
 ) ENGINE=MyISAM;
 CREATE INDEX idx_manufacturer ON SpareParts(manufacturer);
 
-Downtime Table
+---------------- Downtime Table ----------------
 CREATE TABLE Downtime (
     downtimeID INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     equipmentID VARCHAR(25),
@@ -40,7 +40,7 @@ CREATE TABLE Downtime (
 ) ENGINE=InnoDB;
 CREATE INDEX idx_downtime ON Downtime(equipmentID, downtimeDate);
 
-Finance Records Table
+---------------- Finance Records Table ----------------
 CREATE TABLE FinanceRecord (
     recordID VARCHAR(25) PRIMARY KEY,
     downtimeID INT,
