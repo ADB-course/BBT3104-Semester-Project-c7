@@ -1,4 +1,6 @@
 -- Write your SQL code here
+
+-------------------------------------------- Triggers 1: Ensures that the scheduledDate is a working day --------------------------------------------
 DELIMITER $$
 
 CREATE TRIGGER before_insert_maintenance
@@ -17,6 +19,9 @@ BEGIN
 END$$
 
 DELIMITER ;
+
+
+------------------ Triggers 2: Populated the downtime table according to the equipment status ------------------
 
 DELIMITER $$
 
