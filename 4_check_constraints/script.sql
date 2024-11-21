@@ -13,7 +13,7 @@ CREATE TABLE Maintenance (
     sessionID VARCHAR(25) PRIMARY KEY, 
     equipmentID VARCHAR(25),
     scheduledDate TIMESTAMP CHECK (scheduledDate >= CURRENT_TIMESTAMP),     actualDate TIMESTAMP,
-    status CHAR(15) DEFAULT 'Pending' CHECK (status IN ('Pending', 'Completed', 'Cancelled')),    FOREIGN KEY (equipmentID) REFERENCES Equipment(equipmentID)
+    FOREIGN KEY (equipmentID) REFERENCES Equipment(equipmentID)
 ) ENGINE=InnoDB;
 CREATE INDEX idx_equipment ON Maintenance(equipmentID);
 
